@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "net.themonhub.playeranimationfeatures.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	},
+	"client": [
+		"animator.PlayerAnimator",
+		"animator.CapeAnimator",
+		"animator.ElytraAnimator"
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "player-animation-features",
+	"version": "${version}",
+	"name": "Player Animation Features",
+	"description": "Adds support for resource-pack driven features for player animations, such as custom player animations and elytra animations.",
+	"authors": [
+		"TheMonHub"
+	],
+	"contact": {
+        "email": "mono@themonhub.net",
+		"homepage": "https://fabricmc.net/",
+        "issues": "https://github.com/TheMonHub/PlayerAnimationFeatures/issues",
+		"sources": "https://github.com/TheMonHub/PlayerAnimationFeatures"
+	},
+	"license": "Apache-2.0",
+	"icon": "assets/playeranimationfeatures/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "net.themonhub.playeranimationfeatures.PlayerAnimationFeatures",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"playeranimationfeatures.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
