@@ -14,4 +14,6 @@ object PivotOffset {
 
     val ElytraLeftWingPivot = Math.Vec3(5.0, 0.0, 0.0)
     val ElytraRightWingPivot = Math.Vec3(-5.0, 0.0, 0.0)
+
+    val CapePivot = Math.Vec3(0.0, 0.0, 0.4)
 }

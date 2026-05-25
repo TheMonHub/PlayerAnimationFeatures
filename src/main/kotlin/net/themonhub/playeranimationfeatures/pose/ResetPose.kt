@@ -6,13 +6,14 @@ import net.minecraft.client.renderer.entity.state.HumanoidRenderState
 import net.themonhub.playeranimationfeatures.constant.PivotOffset
 import net.themonhub.playeranimationfeatures.utility.Math
 import net.themonhub.playeranimationfeatures.utility.Math.rotateAroundAxis
+import kotlin.math.PI
 
 object ResetPose {
-    private fun ModelPart.resetPose(pivot: Math.Vec3, bodyRot: Float, isCrouching: Boolean) {
+    private fun ModelPart.resetPose(pivot: Math.Vec3, bodyRot: Float, isCrouching: Boolean, addYRot: Float = 0.0f) {
         this.resetPose()
         val modelPartPos = rotateAroundAxis(pivot, Math.Vec3.UNIT_Y, -bodyRot)
         this.setPos(modelPartPos.x.toFloat(), modelPartPos.y.toFloat(), modelPartPos.z.toFloat())
-        this.yRot = -bodyRot
+        this.yRot = -bodyRot + addYRot
         if (isCrouching) {
             this.y += PivotOffset.CROUCHING_OFFSET
         }
@@ -50,6 +51,6 @@ object ResetPose {
         val bodyRot = Math.toRadians(state.bodyRot).toFloat()
         val isCrouching = state.isCrouching
 
-        cape.resetPose(Math.Vec3.ZERO, bodyRot, isCrouching)
+        cape.resetPose(PivotOffset.CapePivot, bodyRot, isCrouching, PI.toFloat())
     }
 }

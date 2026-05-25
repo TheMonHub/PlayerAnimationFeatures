@@ -64,18 +64,18 @@ object Math {
         }
     }
 
-    fun rotateAroundAxis(v: Vec3, axis: Vec3, angleRadians: Number): Vec3 {
-        val k = axis.normalize()
+    fun rotateAroundAxis(pivot: Vec3, axis: Vec3, angleRadians: Number): Vec3 {
+        val normalizedAxis = axis.normalize()
 
         val cos: Double = cos(angleRadians.toDouble())
         val sin: Double = sin(angleRadians.toDouble())
 
-        val term1 = v.multiply(cos)
+        val term1 = pivot.multiply(cos)
 
-        val term2 = k.cross(v).multiply(sin)
+        val term2 = normalizedAxis.cross(pivot).multiply(sin)
 
-        val term3 = k.multiply(
-            k.dot(v) * (1 - cos)
+        val term3 = normalizedAxis.multiply(
+            normalizedAxis.dot(pivot) * (1 - cos)
         )
 
         return term1.add(term2).add(term3)

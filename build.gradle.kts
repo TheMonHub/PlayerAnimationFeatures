@@ -40,11 +40,10 @@ dependencies {
 	implementation("net.fabricmc:fabric-language-kotlin:${providers.gradleProperty("fabric_kotlin_version").get()}")
 
 	// Include the mods that will be included when testing
-	runtimeOnly("com.terraformersmc:modmenu:${providers.gradleProperty("modmenu_version").get()}")
 	runtimeOnly("com.ptsmods:devlogin:3.5")
+	runtimeOnly("com.terraformersmc:modmenu:${providers.gradleProperty("modmenu_version").get()}")
 	runtimeOnly("maven.modrinth:entitytexturefeatures:${providers.gradleProperty("etf_version").get()}")
 	runtimeOnly("maven.modrinth:entity-model-features:${providers.gradleProperty("emf_version").get()}")
-
 }
 
 tasks.processResources {

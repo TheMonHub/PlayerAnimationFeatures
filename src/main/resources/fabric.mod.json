@@ -3,7 +3,7 @@
 	"id": "player-animation-features",
 	"version": "${version}",
 	"name": "Player Animation Features",
-	"description": "Adds support for resource-pack driven features for player animations, such as custom player animations and elytra animations.",
+	"description": "Adds support for resource-pack driven features for player animations, such as custom player animations and more related to player models.",
 	"authors": [
 		"TheMonHub"
 	],
